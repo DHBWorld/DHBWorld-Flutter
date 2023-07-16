@@ -10,7 +10,7 @@ class LayoutStructure extends StatefulWidget {
   State<LayoutStructure> createState() => LayoutStructureState();
 }
 
-class LayoutStructureState extends State<LayoutStructure> {
+class LayoutStructureState extends State<LayoutStructure> with SingleTickerProviderStateMixin {
   Widget screen = NavigationRoutes.routes.first.route;
 
   DHBWorldNavigator? navigator;
@@ -23,16 +23,16 @@ class LayoutStructureState extends State<LayoutStructure> {
         backgroundColor: Theme.of(context).colorScheme.primary,
         title: const Text("DHBWorld", style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500)),
         iconTheme: const IconThemeData(color: Colors.white),
-        actions: <Widget>[
-          IconButton(
-              onPressed: () {
-                ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("data")));
-              },
-              icon: const Icon(Icons.refresh_rounded))
-        ],
+        //actions: <Widget>[
+        //  IconButton(
+        //      onPressed: () {
+        //        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("data")));
+        //      },
+        //      icon: const Icon(Icons.refresh_rounded))
+        //],
       ),
       drawer: navigator!.buildNavDrawer(),
-      body: screen,
+      body: screen
     );
   }
 

@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   material3_layout: ^0.0.7
   get: ^4.6.5
+  shared_preferences: ^2.2.0
 
 dev_dependencies:
   flutter_test:

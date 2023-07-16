@@ -37,7 +37,7 @@ class DHBWorldNavigator {
     );
 
     return NavigationDrawerTheme(data: const NavigationDrawerThemeData(
-        tileHeight: 48.0
+        tileHeight: 42.0
     ), child: navDrawer);
   }
 
@@ -62,7 +62,7 @@ class DHBWorldNavigator {
 
   Padding buildDivider() {
     return const Padding(
-      padding: EdgeInsets.fromLTRB(28, 16, 28, 10),
+      padding: EdgeInsets.fromLTRB(28, 8, 28, 8),
       child: Divider(),
     );
   }

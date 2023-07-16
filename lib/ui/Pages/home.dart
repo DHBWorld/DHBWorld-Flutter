@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
-  final String title;
-
-  const Home({super.key, required this.title});
+  const Home({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Text(title);
+    return Align(
+      alignment: Alignment.topRight,
+      child: Text("Hello")
+    );
   }
 }
