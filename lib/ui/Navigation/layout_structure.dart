@@ -11,7 +11,7 @@ class LayoutStructure extends StatefulWidget {
 }
 
 class LayoutStructureState extends State<LayoutStructure> with SingleTickerProviderStateMixin {
-  Widget screen = NavigationRoutes.routes.first.route;
+  Widget screen = NavigationRoutes.routes.first.route();
 
   DHBWorldNavigator? navigator;
 
@@ -38,7 +38,7 @@ class LayoutStructureState extends State<LayoutStructure> with SingleTickerProvi
 
   void onItemTap(int index) {
     setState(() {
-      screen = NavigationRoutes.routes[index].route;
+      screen = NavigationRoutes.routes[index].route();
       Navigator.pop(context);
     });
   }
