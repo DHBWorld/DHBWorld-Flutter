@@ -69,7 +69,7 @@ class PersonalInformationController extends GetxController {
     if (text.isNotEmpty) {
       int? mNumberInt = int.tryParse(text);
       if (mNumberInt == null || mNumberInt > 9999999) {
-        matriculationNumberError("Can only contain 7 digits");
+        matriculationNumberError('error_only_7_digits'.tr);
         return false;
       }
     }
@@ -80,7 +80,7 @@ class PersonalInformationController extends GetxController {
     if (text.isNotEmpty) {
       int? mNumberInt = int.tryParse(text);
       if (mNumberInt == null || mNumberInt > 999999999999) {
-        libraryNumberError("Can only contain 12 digits");
+        libraryNumberError("error_only_12_digits".tr);
         return false;
       }
     }
@@ -90,7 +90,7 @@ class PersonalInformationController extends GetxController {
   copyToClipboard(BuildContext context, String text) async {
     await Clipboard.setData(ClipboardData(text: text));
     if (context.mounted) {
-      Snackbar.create("Text copied");
+      Snackbar.create("text_copied".tr);
     }
   }
 

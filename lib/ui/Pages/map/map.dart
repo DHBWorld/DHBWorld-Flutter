@@ -23,7 +23,7 @@ class Map extends StatelessWidget {
                   runSpacing: 16,
                   children: <Widget>[
                     DropdownMenu<String>(
-                      label: const Text("Room"),
+                      label: Text("room".tr),
                       inputDecorationTheme: const InputDecorationTheme(
                           filled: true
                       ),
@@ -40,7 +40,7 @@ class Map extends StatelessWidget {
                       },
                     ),
                     DropdownMenu<String>(
-                      label: const Text("Entrance"),
+                      label: Text("entrance".tr),
                       inputDecorationTheme: const InputDecorationTheme(
                           filled: true
                       ),
@@ -60,7 +60,7 @@ class Map extends StatelessWidget {
                             controller.showMap();
                             FocusScope.of(context).unfocus();
                           },
-                          child: const Text("Show path")
+                          child: Text("show_path".tr)
                       )
                     ),
                     if (controller.mapImage.value != null) SizedBox(

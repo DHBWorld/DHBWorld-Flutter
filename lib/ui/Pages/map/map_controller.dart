@@ -10,9 +10,9 @@ class MapController extends GetxController {
   final List<DropdownMenuEntry<String>> roomList = <DropdownMenuEntry<String>>[];
 
   final List<DropdownMenuEntry<String>> entranceList = <DropdownMenuEntry<String>>[
-    const DropdownMenuEntry(value: "1", label: "Main entry"),
-    const DropdownMenuEntry(value: "2", label: "South entrance"),
-    const DropdownMenuEntry(value: "3", label: "North entrance")
+    DropdownMenuEntry(value: "1", label: "main_entrance".tr),
+    DropdownMenuEntry(value: "2", label: "south_entrance".tr),
+    DropdownMenuEntry(value: "3", label: "north_entrance".tr)
   ];
 
   final TextEditingController roomController = TextEditingController();
@@ -53,7 +53,8 @@ class MapController extends GetxController {
       await rootBundle.load('lib/assets/map/images/$prefix${selectedRoom.value}');
       mapImage(AssetImage('lib/assets/map/images/$prefix${selectedRoom.value}'));
     } catch(_) {
-      Snackbar.create("No map available");
+      mapImage.value = null;
+      Snackbar.create("no_map_available".tr);
     }
   }
 }

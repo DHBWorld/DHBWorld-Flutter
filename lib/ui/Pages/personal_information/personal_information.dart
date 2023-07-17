@@ -32,7 +32,7 @@ class PersonalInformation extends StatelessWidget {
                   TextField(
                     decoration: InputDecoration(
                       border: const OutlineInputBorder(),
-                      labelText: "Name",
+                      labelText: "name".tr,
                         suffixIcon: IconButton(
                             onPressed: () => controller.copyToClipboard(context, controller.nameController.text),
                             icon: const Icon(Icons.copy))),
@@ -46,7 +46,7 @@ class PersonalInformation extends StatelessWidget {
                   TextField(
                     decoration: InputDecoration(
                         border: const OutlineInputBorder(),
-                        labelText: "Matriculation number",
+                        labelText: "matriculation_number".tr,
                         errorText: controller.matriculationNumberError.value,
                         enabled: true,
                         suffixIcon: IconButton(
@@ -62,7 +62,7 @@ class PersonalInformation extends StatelessWidget {
                   TextField(
                     decoration: InputDecoration(
                         border: const OutlineInputBorder(),
-                        labelText: "Library number",
+                        labelText: "library_number".tr,
                         errorText: controller.libraryNumberError.value,
                         suffixIcon: IconButton(
                             onPressed: () => controller.copyToClipboard(context, controller.libraryNumberController.text),
@@ -77,7 +77,7 @@ class PersonalInformation extends StatelessWidget {
                   TextField(
                     decoration: InputDecoration(
                         border: const OutlineInputBorder(),
-                        labelText: "Student E-Mail",
+                        labelText: "student_email".tr,
                         suffixIcon: IconButton(
                             onPressed: () => controller.copyToClipboard(context, controller.studentEmailController.text),
                             icon: const Icon(Icons.copy))),
@@ -91,9 +91,9 @@ class PersonalInformation extends StatelessWidget {
                   SizedBox(
                     height: 300,
                     child: TextField(
-                      decoration: const InputDecoration(
-                          border: OutlineInputBorder(),
-                          labelText: "Free notes"),
+                      decoration: InputDecoration(
+                          border: const OutlineInputBorder(),
+                          labelText: "free_notes".tr),
                       keyboardType: TextInputType.multiline,
                       controller: controller.notesController,
                       maxLines: null,
@@ -111,12 +111,12 @@ class PersonalInformation extends StatelessWidget {
                           FilledButton(
                             onPressed: () => {controller.cancel()},
                             style: FilledButton.styleFrom(backgroundColor: mColors.grey_dark),
-                            child: const Text("Cancel"),
+                            child: Text("cancel".tr),
                           ),
                           FilledButton(
                             onPressed: () async => {await controller.saveData()},
                             style: FilledButton.styleFrom(backgroundColor: mColors.red),
-                            child: const Text("Save"),
+                            child: Text('save'.tr),
                           )
                         ],
                       )
