@@ -3,7 +3,9 @@ import 'package:dhbworld_flutter/ui/utilities/focus/always_disabled_focus_node.d
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'package:dhbworld_flutter/values/mColors.dart';
+import 'package:dhbworld_flutter/values/colors.dart';
+
+import '../../../generated/l10n.dart';
 
 class PersonalInformation extends StatelessWidget {
   final controller = Get.put(PersonalInformationController());
@@ -32,7 +34,7 @@ class PersonalInformation extends StatelessWidget {
                   TextField(
                     decoration: InputDecoration(
                       border: const OutlineInputBorder(),
-                      labelText: "name".tr,
+                      labelText: S.current.name,
                         suffixIcon: IconButton(
                             onPressed: () => controller.copyToClipboard(context, controller.nameController.text),
                             icon: const Icon(Icons.copy))),
@@ -46,7 +48,7 @@ class PersonalInformation extends StatelessWidget {
                   TextField(
                     decoration: InputDecoration(
                         border: const OutlineInputBorder(),
-                        labelText: "matriculation_number".tr,
+                        labelText: S.current.matriculation_number,
                         errorText: controller.matriculationNumberError.value,
                         enabled: true,
                         suffixIcon: IconButton(
@@ -62,7 +64,7 @@ class PersonalInformation extends StatelessWidget {
                   TextField(
                     decoration: InputDecoration(
                         border: const OutlineInputBorder(),
-                        labelText: "library_number".tr,
+                        labelText: S.current.library_number,
                         errorText: controller.libraryNumberError.value,
                         suffixIcon: IconButton(
                             onPressed: () => controller.copyToClipboard(context, controller.libraryNumberController.text),
@@ -77,7 +79,7 @@ class PersonalInformation extends StatelessWidget {
                   TextField(
                     decoration: InputDecoration(
                         border: const OutlineInputBorder(),
-                        labelText: "student_email".tr,
+                        labelText: S.current.student_email,
                         suffixIcon: IconButton(
                             onPressed: () => controller.copyToClipboard(context, controller.studentEmailController.text),
                             icon: const Icon(Icons.copy))),
@@ -93,7 +95,7 @@ class PersonalInformation extends StatelessWidget {
                     child: TextField(
                       decoration: InputDecoration(
                           border: const OutlineInputBorder(),
-                          labelText: "free_notes".tr),
+                          labelText: S.current.free_notes),
                       keyboardType: TextInputType.multiline,
                       controller: controller.notesController,
                       maxLines: null,
@@ -110,13 +112,13 @@ class PersonalInformation extends StatelessWidget {
                         children: <Widget>[
                           FilledButton(
                             onPressed: () => {controller.cancel()},
-                            style: FilledButton.styleFrom(backgroundColor: mColors.grey_dark),
-                            child: Text("cancel".tr),
+                            style: FilledButton.styleFrom(backgroundColor: DColors.grey_dark),
+                            child: Text(S.current.cancel),
                           ),
                           FilledButton(
                             onPressed: () async => {await controller.saveData()},
-                            style: FilledButton.styleFrom(backgroundColor: mColors.red),
-                            child: Text('save'.tr),
+                            style: FilledButton.styleFrom(backgroundColor: DColors.red),
+                            child: Text(S.current.save),
                           )
                         ],
                       )

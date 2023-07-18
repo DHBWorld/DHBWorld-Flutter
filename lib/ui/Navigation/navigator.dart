@@ -1,7 +1,8 @@
 import 'package:dhbworld_flutter/values/navigation_routes.dart';
 import 'package:flutter/material.dart';
-import 'package:dhbworld_flutter/values/mColors.dart';
+import 'package:dhbworld_flutter/values/colors.dart';
 
+import '../../generated/l10n.dart';
 import 'nav_route.dart';
 
 class DHBWorldNavigator {
@@ -15,7 +16,7 @@ class DHBWorldNavigator {
     var navDrawer = NavigationDrawer(
       onDestinationSelected: _onItemTap,
       selectedIndex: screenIndex,
-      indicatorColor: mColors.red_selection,
+      indicatorColor: DColors.red_selection,
       indicatorShape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(
               Radius.circular(12)
@@ -42,18 +43,18 @@ class DHBWorldNavigator {
   }
 
   Padding buildHeader() {
-    return const Padding(
-        padding: EdgeInsets.fromLTRB(28, 44, 16, 24),
+    return Padding(
+        padding: const EdgeInsets.fromLTRB(28, 44, 16, 24),
         child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget> [
               Text(
-                'DHBWorld',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                S.current.dhbworld,
+                style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
               ),
               Text(
-                'Die All-in-One DHBW App.',
-                style: TextStyle(fontSize: 14),
+                S.current.all_in_one_app,
+                style: const TextStyle(fontSize: 14),
               )
             ]
         ),
@@ -74,14 +75,14 @@ class DHBWorldNavigator {
 
   TextStyle? _getDrawerTextColor(int screenIndex, int actualIndex) {
     if (screenIndex == actualIndex) {
-      return const TextStyle(color: mColors.red);
+      return const TextStyle(color: DColors.red);
     }
     return null;
   }
 
   Color? _getIconColor(int screenIndex, int actualIndex) {
     if (screenIndex == actualIndex) {
-      return mColors.red;
+      return DColors.red;
     }
     return null;
   }

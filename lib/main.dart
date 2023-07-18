@@ -1,9 +1,9 @@
 import 'package:dhbworld_flutter/ui/Navigation/layout_structure.dart';
-import 'package:dhbworld_flutter/values/Strings.dart';
 import 'package:flutter/material.dart';
-import 'values/mColors.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'generated/l10n.dart';
+import 'values/colors.dart';
 import 'package:get/get.dart';
-import 'dart:io';
 
 void main() {
   runApp(const MyApp());
@@ -17,13 +17,17 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'DHBWorld',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: mColors.red, primary: mColors.red, primaryContainer: mColors.red, onPrimary: Colors.white, secondary: mColors.grey_dark, onSecondary: Colors.white),
+        colorScheme: ColorScheme.fromSeed(seedColor: DColors.red, primary: DColors.red, primaryContainer: DColors.red, onPrimary: Colors.white, secondary: DColors.grey_dark, onSecondary: Colors.white),
         useMaterial3: true,
        ),
       home: const LayoutStructure(),
-      translations: Strings(),
-      locale: Locale(Platform.localeName),
-      fallbackLocale: const Locale('en', 'US'),
+      localizationsDelegates: const [
+        S.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: S.delegate.supportedLocales,
     );
   }
 }

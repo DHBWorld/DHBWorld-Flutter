@@ -1,0 +1,23 @@
+{
+  "all_in_one_app": "Die All-in-One DHBW App.",
+  "cancel": "Abbrechen",
+  "dhbworld": "DHBWorld",
+  "entrance": "Eingang",
+  "error_only_12_digits": "Kann nur 12 Ziffern enthalten",
+  "error_only_7_digits": "Kann nur 7 Ziffern enthalten",
+  "free_notes": "Freie Notizen",
+  "library_number": "Bibliotheksnummer",
+  "main_entrance": "Haupteingang",
+  "map": "Karte",
+  "matriculation_number": "Matrikelnummer",
+  "name": "Name",
+  "no_map_available": "Keine Karte verfügbar",
+  "north_entrance": "Eingang Nord",
+  "personal_information": "Persönliche Infos",
+  "room": "Raum",
+  "save": "Speichern",
+  "show_path": "Weg anzeigen",
+  "south_entrance": "Eingang Süd",
+  "student_email": "Studenten-E-Mail",
+  "text_copied": "Text kopiert"
+}

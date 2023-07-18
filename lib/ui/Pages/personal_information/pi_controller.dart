@@ -4,6 +4,8 @@ import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/services.dart';
 
+import '../../../generated/l10n.dart';
+
 class PersonalInformationController extends GetxController {
   SharedPreferences? _prefs;
 
@@ -69,7 +71,7 @@ class PersonalInformationController extends GetxController {
     if (text.isNotEmpty) {
       int? mNumberInt = int.tryParse(text);
       if (mNumberInt == null || mNumberInt > 9999999) {
-        matriculationNumberError('error_only_7_digits'.tr);
+        matriculationNumberError(S.current.error_only_7_digits);
         return false;
       }
     }
@@ -80,7 +82,7 @@ class PersonalInformationController extends GetxController {
     if (text.isNotEmpty) {
       int? mNumberInt = int.tryParse(text);
       if (mNumberInt == null || mNumberInt > 999999999999) {
-        libraryNumberError("error_only_12_digits".tr);
+        libraryNumberError(S.current.error_only_12_digits);
         return false;
       }
     }
@@ -90,7 +92,7 @@ class PersonalInformationController extends GetxController {
   copyToClipboard(BuildContext context, String text) async {
     await Clipboard.setData(ClipboardData(text: text));
     if (context.mounted) {
-      Snackbar.create("text_copied".tr);
+      Snackbar.create(S.current.text_copied);
     }
   }
 

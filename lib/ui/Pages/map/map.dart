@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:photo_view/photo_view.dart';
 
+import '../../../generated/l10n.dart';
+
 class Map extends StatelessWidget {
   final controller = Get.put(MapController());
 
@@ -23,7 +25,7 @@ class Map extends StatelessWidget {
                   runSpacing: 16,
                   children: <Widget>[
                     DropdownMenu<String>(
-                      label: Text("room".tr),
+                      label: Text(S.current.room),
                       inputDecorationTheme: const InputDecorationTheme(
                           filled: true
                       ),
@@ -40,7 +42,7 @@ class Map extends StatelessWidget {
                       },
                     ),
                     DropdownMenu<String>(
-                      label: Text("entrance".tr),
+                      label: Text(S.current.entrance),
                       inputDecorationTheme: const InputDecorationTheme(
                           filled: true
                       ),
@@ -60,7 +62,7 @@ class Map extends StatelessWidget {
                             controller.showMap();
                             FocusScope.of(context).unfocus();
                           },
-                          child: Text("show_path".tr)
+                          child: Text(S.current.show_path)
                       )
                     ),
                     if (controller.mapImage.value != null) SizedBox(

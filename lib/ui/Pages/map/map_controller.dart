@@ -5,14 +5,16 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
+import '../../../generated/l10n.dart';
+
 class MapController extends GetxController {
 
   final List<DropdownMenuEntry<String>> roomList = <DropdownMenuEntry<String>>[];
 
   final List<DropdownMenuEntry<String>> entranceList = <DropdownMenuEntry<String>>[
-    DropdownMenuEntry(value: "1", label: "main_entrance".tr),
-    DropdownMenuEntry(value: "2", label: "south_entrance".tr),
-    DropdownMenuEntry(value: "3", label: "north_entrance".tr)
+    DropdownMenuEntry(value: "1", label: S.current.main_entrance),
+    DropdownMenuEntry(value: "2", label: S.current.south_entrance),
+    DropdownMenuEntry(value: "3", label: S.current.north_entrance)
   ];
 
   final TextEditingController roomController = TextEditingController();
@@ -54,7 +56,7 @@ class MapController extends GetxController {
       mapImage(AssetImage('lib/assets/map/images/$prefix${selectedRoom.value}'));
     } catch(_) {
       mapImage.value = null;
-      Snackbar.create("no_map_available".tr);
+      Snackbar.create(S.current.no_map_available);
     }
   }
 }

@@ -1,0 +1,23 @@
+{
+  "all_in_one_app": "Die All-in-One DHBW App.",
+  "cancel": "Cancel",
+  "dhbworld": "DHBWorld",
+  "entrance": "Entrance",
+  "error_only_12_digits": "Can only contain 12 digits",
+  "error_only_7_digits": "Can only contain 7 digits",
+  "free_notes": "Free notes",
+  "library_number": "Library number",
+  "main_entrance": "Main Entrance",
+  "map": "Map",
+  "matriculation_number": "Matriculation number",
+  "name": "Name",
+  "no_map_available": "No map available",
+  "north_entrance": "North Entrance",
+  "personal_information": "Personal information",
+  "room": "Room",
+  "save": "Save",
+  "show_path": "Show path",
+  "south_entrance": "South Entrance",
+  "student_email": "Student E-Mail",
+  "text_copied": "Text copied"
+}
