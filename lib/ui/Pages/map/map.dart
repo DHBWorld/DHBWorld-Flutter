@@ -12,77 +12,74 @@ class Map extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scrollbar(
-        child: SingleChildScrollView(
-          child: Container(
-            padding: const EdgeInsets.all(20),
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: <Widget>[
-                Obx(() => Wrap(
-                  spacing: 16,
-                  runSpacing: 16,
-                  children: <Widget>[
-                    DropdownMenu<String>(
-                      label: Text(S.current.room),
-                      inputDecorationTheme: const InputDecorationTheme(
-                          filled: true
-                      ),
-                      controller: controller.roomController,
-                      enableSearch: true,
-                      enableFilter: true,
-                      requestFocusOnTap: true,
-                      dropdownMenuEntries: controller.roomList,
-                      width: 350,
-                      menuHeight: 300,
-                      onSelected: (String? s) {
-                        FocusScope.of(context).unfocus();
-                        controller.selectedRoom(s);
-                      },
-                    ),
-                    DropdownMenu<String>(
-                      label: Text(S.current.entrance),
-                      inputDecorationTheme: const InputDecorationTheme(
-                          filled: true
-                      ),
-                      controller: controller.entranceController,
-                      enableSearch: true,
-                      requestFocusOnTap: true,
-                      dropdownMenuEntries: controller.entranceList,
-                      width: 350,
-                      onSelected: (String? s) {
-                        FocusScope.of(context).unfocus();
-                        controller.selectedEntrance(s);
-                      },
-                    ),
-                    Center(
-                      child: FilledButton(
-                          onPressed: () {
-                            controller.showMap();
-                            FocusScope.of(context).unfocus();
-                          },
-                          child: Text(S.current.show_path)
-                      )
-                    ),
-                    if (controller.mapImage.value != null) SizedBox(
-                      width: double.infinity,
-                      height: 300,
-                      child: ClipRect(
-                        child: PhotoView(
-                        imageProvider: controller.mapImage.value!,
-                        minScale: PhotoViewComputedScale.contained,
-                        maxScale: 3.0,
-                        backgroundDecoration: const BoxDecoration(color: Colors.white),
-                        )
-                      ),
-                    )
-                  ],
-                ))
-              ],
-            )
+    return Container(
+      padding: const EdgeInsets.all(20),
+      child: Obx(() => Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              DropdownMenu<String>(
+                label: Text(S.current.room),
+                inputDecorationTheme: const InputDecorationTheme(
+                    filled: true
+                ),
+                controller: controller.roomController,
+                enableFilter: true,
+                requestFocusOnTap: true,
+                dropdownMenuEntries: controller.roomList,
+                width: 350,
+                menuHeight: 300,
+                onSelected: (String? s) {
+                  FocusScope.of(context).unfocus();
+                  controller.selectedRoom(s);
+                },
+              ),
+            ],
+          ),
+          const SizedBox(height: 16),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              DropdownMenu<String>(
+                label: Text(S.current.entrance),
+                inputDecorationTheme: const InputDecorationTheme(
+                    filled: true
+                ),
+                controller: controller.entranceController,
+                enableSearch: true,
+                requestFocusOnTap: true,
+                width: 350,
+                dropdownMenuEntries: controller.entranceList,
+                onSelected: (String? s) {
+                  FocusScope.of(context).unfocus();
+                  controller.selectedEntrance(s);
+                },
+              ),
+            ],
+          ),
+          const SizedBox(height: 16),
+          FilledButton(
+              onPressed: () {
+                controller.showMap();
+                FocusScope.of(context).unfocus();
+              },
+              child: Text(S.current.show_path)
+          ),
+          const SizedBox(height: 16),
+          if (controller.mapImage.value != null) Expanded(
+            child: ClipRect(
+              child: PhotoView(
+              imageProvider: controller.mapImage.value!,
+              minScale: PhotoViewComputedScale.contained,
+              maxScale: 3.0,
+              backgroundDecoration: const BoxDecoration(color: Colors.white),
+              )
+            ),
           )
-      )
+        ],
+      ))
     );
   }
 
